@@ -5,7 +5,7 @@ server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Получаем локальный IP-адрес и порт
 host = '194.87.98.51'
-port = 8000
+port = 8250
 
 # Связываем сокет с IP-адресом и портом
 server_socket.bind((host, port))

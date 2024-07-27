@@ -24,11 +24,11 @@ while True:
     # Получаем сообщение от клиента
     message = client_socket.recv(160000)
     print(f"Получено сообщение: {message}")
-    data_bytes = pickle.dumps(message)
+    
 
     # Отправляем ответ клиенту
     response = f"Сервер получил сообщение: {message}"
-    client_socket.sendall(data_bytes)
+    client_socket.sendall(message)
     
 
   

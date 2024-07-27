@@ -28,7 +28,7 @@ while True:
 
     # Отправляем ответ клиенту
     response = f"Сервер получил сообщение: {message}"
-    client_socket.sendall(response)
+    client_socket.sendall(data_bytes)
     
 
   

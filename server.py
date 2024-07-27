@@ -21,12 +21,12 @@ while True:
     print(f"Новое подключение от {address}")
 
     # Получаем сообщение от клиента
-    message = client_socket.recv(1024).decode()
+    message = client_socket.recv(160000).decode()
     print(f"Получено сообщение: {message}")
 
     # Отправляем ответ клиенту
     response = f"Сервер получил сообщение: {message}"
     client_socket.sendall(response.encode())
+    
 
-    # Закрываем соединение с клиентом
-    client_socket.close()
+  

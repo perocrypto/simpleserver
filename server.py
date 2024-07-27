@@ -1,4 +1,5 @@
 import socket
+import pickle
 
 # Создаем сокет сервера
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -19,10 +20,11 @@ while True:
     # Ждем подключения клиента
     client_socket, address = server_socket.accept()
     print(f"Новое подключение от {address}")
-
+    
     # Получаем сообщение от клиента
     message = client_socket.recv(160000)
     print(f"Получено сообщение: {message}")
+    data_bytes = pickle.dumps(message)
 
     # Отправляем ответ клиенту
     response = f"Сервер получил сообщение: {message}"
